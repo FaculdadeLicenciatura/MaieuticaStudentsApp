@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Maiêutica Students</string>
+    <string name="login_button_text">Entrar</string>
+    <string name="nav_horario">Horário</string>
+    <string name="nav_anuncios">Anúncios</string>
+    <string name="nav_principal">Principal</string>
+    <string name="nav_perguntas">Perguntas</string>
+    <string name="nav_emails">E-mails</string>
+    <string name="principal_text">Página Principal</string>
+</resources>
