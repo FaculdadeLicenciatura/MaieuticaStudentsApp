@@ -5,11 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Campaign
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.Mail
+import androidx.compose.material.icons.filled.QuestionAnswer
+import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -55,13 +55,13 @@ fun MainScreen() {
 @Composable
 fun BottomNavigationBar(navController: androidx.navigation.NavController) {
     val items = listOf("horario", "anuncios", "principal", "perguntas", "emails")
-    val titles = listOf("Horário", "Anúncios", "Principal", "Perguntas", "E-mails")
+    val titles = listOf("Horário", "Anúncios", "Principal", "P&R", "E-mails")
     val icons = listOf(
-        Icons.Default.Star,         // Horário
-        Icons.Default.Info,          // Anúncios
-        Icons.Default.Home,          // Principal
-        Icons.Default.Person,        // Perguntas
-        Icons.Default.Email          // E-mails
+        Icons.Default.Schedule,        // Horário
+        Icons.Default.Campaign,        // Anúncios
+        Icons.Default.Home,            // Principal
+        Icons.Default.QuestionAnswer,  // Perguntas
+        Icons.Default.Mail             // E-mails
     )
 
     NavigationBar {
