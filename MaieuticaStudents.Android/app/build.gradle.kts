@@ -85,5 +85,9 @@ dependencies {
     //icons
     implementation("io.coil-kt:coil-compose:2.1.0")
     implementation("androidx.compose.material:material-icons-extended:1.4.3")
+    implementation("com.google.accompanist:accompanist-placeholder-material:0.24.0-alpha")
+    implementation("io.github.jeziellago:compose-markdown:0.2.3")
+    implementation("org.commonmark:commonmark:0.18.2")
+
 }
 

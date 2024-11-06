@@ -44,7 +44,11 @@ fun MainScreen() {
             modifier = androidx.compose.ui.Modifier.padding(paddingValues)
         ) {
             composable("horario") { HorarioScreen() }
-            composable("anuncios") { AnunciosScreen() }
+            composable("anuncios") { AnunciosScreen(navController = navController) }
+            composable("anuncio_detail/{anuncioTitle}") { backStackEntry ->
+                val anuncioTitle = backStackEntry.arguments?.getString("anuncioTitle") ?: ""
+                AnuncioDetailScreen(anuncioTitle = anuncioTitle)
+            }
             composable("principal") { PrincipalScreen() }
             composable("perguntas") { PerguntasScreen() }
             composable("emails") { EmailsScreen() }
