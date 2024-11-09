@@ -6,12 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
-import org.commonmark.parser.Parser
-import org.commonmark.renderer.html.HtmlRenderer
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import com.goncalogarrido.maiuticastudents.viewmodels.AnunciosViewModel
 
 @Composable
@@ -31,21 +26,11 @@ fun AnuncioDetailScreen(anuncioTitle: String, viewModel: AnunciosViewModel = vie
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
-            // Converte Markdown para HTML
-            val parser = Parser.builder().build()
-            val document = parser.parse(it.conteudoMarkdown)
-            val renderer = HtmlRenderer.builder().build()
-            val htmlContent = renderer.render(document)
-
-            // Exibindo o HTML convertido em um WebView
-            AndroidView(
-                factory = { context ->
-                    WebView(context).apply {
-                        webViewClient = WebViewClient()
-                        loadDataWithBaseURL(null, htmlContent, "text/html", "UTF-8", null)
-                    }
-                },
-                modifier = Modifier.fillMaxSize()
+            // Exibindo o conteúdo do markdown diretamente em um Text
+            Text(
+                text = it.conteudoMarkdown,
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.fillMaxWidth()
             )
         } ?: run {
             Text(
