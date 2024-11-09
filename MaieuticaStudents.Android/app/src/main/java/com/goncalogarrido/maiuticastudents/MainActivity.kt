@@ -48,7 +48,11 @@ fun MainScreen() {
             composable("anuncios") { AnunciosScreen(navController = navController) }
             composable("anuncio_detail/{anuncioTitle}") { backStackEntry ->
                 val anuncioTitle = backStackEntry.arguments?.getString("anuncioTitle") ?: ""
-                AnuncioDetailScreen(anuncioTitle = anuncioTitle)
+                AnuncioDetailScreen(
+                    anuncioTitle = anuncioTitle,
+                    onBackClick = { navController.popBackStack() }
+                )
+
             }
             composable("principal") { PrincipalScreen() }
             composable("perguntas") { PerguntasScreen() }

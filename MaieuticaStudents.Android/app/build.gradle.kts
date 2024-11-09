@@ -82,7 +82,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-placeholder-material:0.24.0-alpha")
 
     // Markdown support
-    implementation("io.github.jeziellago:compose-markdown:0.2.3")
+    implementation("com.github.jeziellago:compose-markdown:0.5.4")
     implementation("org.commonmark:commonmark:0.18.2")
 
 }
