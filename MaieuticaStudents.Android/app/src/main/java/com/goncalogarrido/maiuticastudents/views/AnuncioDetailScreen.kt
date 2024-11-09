@@ -1,6 +1,4 @@
-import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -11,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -33,15 +30,7 @@ fun AnuncioDetailScreen(anuncioTitle: String, viewModel: AnunciosViewModel = vie
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .verticalScroll(rememberScrollState())
-            .pointerInput(Unit) {
-                detectHorizontalDragGestures { change, dragAmount ->
-                    if (dragAmount > 50) { // Valor positivo para puxar para a esquerda
-                        onBackClick()
-                        change.consume() // Consome o gesto para evitar propagação adicional
-                    }
-                }
-            }
+            .verticalScroll(rememberScrollState()) // Adiciona a rolagem à coluna inteira
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -60,6 +49,7 @@ fun AnuncioDetailScreen(anuncioTitle: String, viewModel: AnunciosViewModel = vie
         }
 
         anuncio?.let {
+            // Exibe a imagem antes do Markdown
             Image(
                 painter = rememberImagePainter(it.imagem),
                 contentDescription = it.titulo,
@@ -74,9 +64,9 @@ fun AnuncioDetailScreen(anuncioTitle: String, viewModel: AnunciosViewModel = vie
                 markdown = it.conteudoMarkdown,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp),
+                    .padding(8.dp), // Remove o peso para permitir que a coluna controle a rolagem
                 style = TextStyle(
-                    color = MaterialTheme.colorScheme.onBackground,
+                    color = MaterialTheme.colorScheme.onBackground, // Cor clássica que adapta ao tema
                     fontSize = 16.sp,
                     lineHeight = 24.sp,
                     textAlign = TextAlign.Justify,
