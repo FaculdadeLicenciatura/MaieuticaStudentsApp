@@ -50,7 +50,7 @@ fun HorarioScreen() {
                                 Log.d("HorarioScreen", "Resultado da verificação e chamada da função JS: $result")
                                 println("Resultado da verificação e chamada da função JS: $result")
                             }
-                        }, 5000) // Aguarda 5 segundos para o carregamento completo
+                        }, 500)
                     }
                 }
 

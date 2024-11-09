@@ -1,5 +1,6 @@
 package com.goncalogarrido.maiuticastudents
 
+import AnuncioDetailScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,7 +14,6 @@ import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -44,7 +44,15 @@ fun MainScreen() {
             modifier = androidx.compose.ui.Modifier.padding(paddingValues)
         ) {
             composable("horario") { HorarioScreen() }
-            composable("anuncios") { AnunciosScreen() }
+            composable("anuncios") { AnunciosScreen(navController = navController) }
+            composable("anuncio_detail/{anuncioTitle}") { backStackEntry ->
+                val anuncioTitle = backStackEntry.arguments?.getString("anuncioTitle") ?: ""
+                AnuncioDetailScreen(
+                    anuncioTitle = anuncioTitle,
+                    onBackClick = { navController.popBackStack() }
+                )
+
+            }
             composable("principal") { PrincipalScreen() }
             composable("perguntas") { PerguntasScreen() }
             composable("emails") { EmailsScreen() }

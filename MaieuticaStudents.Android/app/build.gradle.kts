@@ -72,18 +72,24 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Navigation and ViewModel
-    implementation("androidx.compose.material3:material3:1.0.1")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.0") // Atualize para uma versão estável
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0")
     implementation("androidx.navigation:navigation-compose:2.5.0")
-
-    // Optional: LiveData integration (para integração se realmente for necessário)
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
 
-    //icons
+    // Icons and UI enhancements
     implementation("io.coil-kt:coil-compose:2.1.0")
     implementation("androidx.compose.material:material-icons-extended:1.4.3")
+    implementation("com.google.accompanist:accompanist-placeholder-material:0.24.0-alpha")
+
+    // Markdown support
+    implementation("com.github.jeziellago:compose-markdown:0.5.4")
+    implementation("org.commonmark:commonmark:0.18.2")
+
 }
 
+// Para evitar conflitos de dependências
+configurations {
+    all {
+        exclude(group = "org.commonmark", module = "commonmark")
+    }
+}

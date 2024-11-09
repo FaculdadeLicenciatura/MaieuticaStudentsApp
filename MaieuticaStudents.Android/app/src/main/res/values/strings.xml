@@ -7,4 +7,6 @@
     <string name="nav_perguntas">Perguntas</string>
     <string name="nav_emails">E-mails</string>
     <string name="principal_text">Página Principal</string>
+    <string name="detalhes_do_anuncio">Detalhes do Anúncio</string>
+    <string name="voltar">Voltar</string>
 </resources>
