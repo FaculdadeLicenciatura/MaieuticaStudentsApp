@@ -29,6 +29,7 @@ fun PerguntasScreen(viewModel: PerguntasViewModel = viewModel()) {
             ) {
                 Column(
                     modifier = Modifier
+                        .fillMaxSize()
                         .clickable { expanded = !expanded }
                         .padding(16.dp)
                 ) {
