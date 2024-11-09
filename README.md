@@ -1,31 +1,31 @@
 # Maiêutica Students App
 
-Bem-vindo ao **Maiêutica Students App**, uma aplicação móvel projetada para melhorar a experiência acadêmica dos alunos do ISMAI e IPMAIA. Este projeto, construído com **Jetpack Compose** e **Kotlin**, visa fornecer informações, notícias e recursos úteis em um ambiente intuitivo e moderno.
+Bem-vindo à **Maiêutica Students App**, uma aplicação móvel projetada para melhorar a experiência académica dos alunos do ISMAI e IPMAIA. Este projeto, desenvolvido com **Jetpack Compose** e **Kotlin**, tem como objetivo fornecer informações, notícias e recursos úteis num ambiente intuitivo e moderno.
 
 ## Funcionalidades
 - **Splash Screen Animada**: Apresenta uma tela de abertura com uma animação de fade-in, exibindo o nome do desenvolvedor.
-- **Navegação Intuitiva**: Uso da navegação do Jetpack para uma experiência de usuário fluida entre diferentes seções da aplicação.
+- **Navegação Intuitiva**: Utilização da navegação do Jetpack para uma experiência de utilizador fluída entre as diferentes secções da aplicação.
 - **Anúncios Detalhados**: Exibição de anúncios com suporte a Markdown para apresentar conteúdo formatado.
-- **Perguntas e Respostas**: Seção dedicada a perguntas frequentes sobre o ISMAI e IPMAIA.
-- **Visualização de E-mails e Informações de Contato**: Acesso fácil aos e-mails importantes e informações de contato das instituições.
-- **Temas Customizados**: Suporte a temas claros e escuros, incluindo cores personalizadas que refletem a identidade visual do campus.
+- **Perguntas e Respostas**: Secção dedicada a perguntas frequentes sobre o ISMAI e IPMAIA.
+- **Visualização de E-mails e Informações de Contacto**: Acesso fácil aos e-mails importantes e informações de contacto das instituições.
+- **Temas Personalizados**: Suporte a temas claros e escuros, incluindo cores personalizadas que refletem a identidade visual do campus.
 
-## Capturas de Tela
-*Adicione aqui imagens da aplicação mostrando diferentes seções, como a splash screen, listagem de anúncios, detalhes dos anúncios, etc.*
+## Capturas de Ecrã
+*Adicione aqui imagens da aplicação mostrando diferentes secções, como a splash screen, listagem de anúncios, detalhes dos anúncios, etc.*
 
 ## Tecnologias Utilizadas
 - **Kotlin**: Linguagem principal do projeto.
 - **Jetpack Compose**: Framework de UI moderno e declarativo.
-- **Coroutines**: Para manipulação assíncrona e tarefas de background.
-- **Material3**: Design System para estilização de componentes.
+- **Coroutines**: Para gestão assíncrona e tarefas em background.
+- **Material3**: Sistema de design para estilização de componentes.
 - **Coil**: Para carregamento de imagens.
 
 ## Estrutura do Projeto
-O projeto está dividido em vários pacotes para melhor organização do código:
-- `views`: Contém as telas da aplicação, como `AnunciosScreen`, `EmailsScreen`, etc.
-- `viewmodels`: Contém os ViewModels responsáveis por gerenciar o estado da UI.
+O projeto está organizado em vários pacotes para uma melhor manutenção do código:
+- `views`: Contém as diferentes telas da aplicação, como `AnunciosScreen`, `EmailsScreen`, etc.
+- `viewmodels`: Contém os ViewModels responsáveis por gerir o estado da UI.
 - `models`: Contém as classes de modelo, como `Anuncio` e `Pergunta`.
-- `ui.theme`: Contém os arquivos relacionados à customização de temas e cores.
+- `ui.theme`: Contém os ficheiros relacionados com a personalização de temas e cores.
 
 ## Como Executar o Projeto
 1. **Clone o repositório**:
@@ -34,7 +34,7 @@ O projeto está dividido em vários pacotes para melhor organização do código
 
 2\. **Abra o projeto no Android Studio**:
 
-   - Certifique-se de ter o Android Studio Arctic Fox (ou mais recente) instalado.
+   - Certifique-se de que tem o Android Studio Arctic Fox (ou mais recente) instalado.
 
 3\. **Compile e execute**:
 
@@ -42,13 +42,12 @@ O projeto está dividido em vários pacotes para melhor organização do código
 
 ## Contribuições
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues para relatórios de bugs e sugestões de funcionalidades ou enviar pull requests.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues para relatar bugs, sugerir novas funcionalidades ou enviar pull requests.
 
-## Contato
+## Contacto
 
-Desenvolvido por **Gonçalo Garrido**. Para entrar em contato, envie um e-mail para [email@example.com](mailto:goncalosantosgarrido@gmail.com).
+Desenvolvido por **Gonçalo Garrido**. Para entrar em contacto, envie um e-mail para [goncalosantosgarrido@gmail.com](mailto:goncalosantosgarrido@gmail.com).
 
 ## Licença
 
-Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
- 
+Este projeto é distribuído sob a licença MIT. Consulte o ficheiro `LICENSE` para mais detalhes.
