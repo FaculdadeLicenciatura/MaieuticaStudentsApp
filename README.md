@@ -30,7 +30,7 @@ O projeto está organizado em vários pacotes para uma melhor manutenção do c�
 ## Como Executar o Projeto
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/username/MaieuticaStudentsApp.git
+   git clone https://github.com/FaculdadeLicenciatura/MaieuticaStudentsApp.git
 
 2\. **Abra o projeto no Android Studio**:
 
