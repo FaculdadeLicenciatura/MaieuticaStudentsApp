@@ -14,26 +14,42 @@ import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.room.Room
+import com.goncalogarrido.maiuticastudents.repository.AppDatabase
+import com.goncalogarrido.maiuticastudents.repository.TarefaRepository
 import com.goncalogarrido.maiuticastudents.ui.theme.MaiêuticaStudentsTheme
+import com.goncalogarrido.maiuticastudents.viewmodels.TarefasViewModel
 import com.goncalogarrido.maiuticastudents.views.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Configuração do banco de dados
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "tarefas-database"
+        ).build()
+        val repository = TarefaRepository(db.tarefaDao())
+
+        // ViewModel manualmente instanciado (ideal usar Hilt para injeção futura)
+        val tarefasViewModel = TarefasViewModel(repository)
+
         setContent {
             MaiêuticaStudentsTheme {
-                MainScreen()
+                MainScreen(tarefasViewModel)
             }
         }
     }
 }
 
 @Composable
-fun MainScreen() {
+fun MainScreen(tarefasViewModel: TarefasViewModel) {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { BottomNavigationBar(navController) }
@@ -56,20 +72,23 @@ fun MainScreen() {
             composable("principal") { PrincipalScreen() }
             composable("perguntas") { PerguntasScreen() }
             composable("emails") { EmailsScreen() }
+            // Nova tela de Tarefas
+            composable("tarefas") { TarefasScreen(viewModel = tarefasViewModel) }
         }
     }
 }
 
 @Composable
 fun BottomNavigationBar(navController: androidx.navigation.NavController) {
-    val items = listOf("horario", "anuncios", "principal", "perguntas", "emails")
-    val titles = listOf("Horário", "Anúncios", "Principal", "P&R", "E-mails")
+    val items = listOf("horario", "anuncios", "principal", "perguntas", "emails", "tarefas")
+    val titles = listOf("Horário", "Anúncios", "Principal", "P&R", "E-mails", "Tarefas")
     val icons = listOf(
         Icons.Default.Schedule,        // Horário
         Icons.Default.Campaign,        // Anúncios
         Icons.Default.Home,            // Principal
         Icons.Default.QuestionAnswer,  // Perguntas
-        Icons.Default.Mail             // E-mails
+        Icons.Default.Mail,            // E-mails
+        Icons.Default.Checklist        // Tarefas
     )
 
     NavigationBar {
